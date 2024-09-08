@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-
+/*
+		 * (Kaiser Stanford)
+		 * (Player enters Trigger)
+		 * (Prototype1)
+		 * (Detect)
+		 */
 public class PlayerEnterTrigger : MonoBehaviour
 {
     

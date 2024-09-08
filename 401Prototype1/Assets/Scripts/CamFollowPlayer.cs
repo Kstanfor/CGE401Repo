@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (CamFollowPlayer)
+		 * (Prototype1)
+		 * (Cam Follows Car)
+		 */
 public class CamFollowPlayer : MonoBehaviour
 {
 

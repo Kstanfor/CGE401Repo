@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (ZoneScore)
+		 * (Prototype1)
+		 * (Increase by one with zones)
+		 */
 //attach this to a trigger zone
 public class TriggerZoneAddScoreOnce : MonoBehaviour
 {

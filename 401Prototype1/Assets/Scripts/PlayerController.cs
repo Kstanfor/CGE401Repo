@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (PlayerMovement)
+		 * (Prototype1)
+		 * (Move the car)
+		 */
 public class PlayerController : MonoBehaviour
 {
     public float speed;
