@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*
+		 * (Kaiser Stanford)
+		 * (ScoreManager)
+		 * (Challenge1)
+		 * (scene managment)
+		 */
 public class ScoreManager : MonoBehaviour
 {
     public static bool gameOver;

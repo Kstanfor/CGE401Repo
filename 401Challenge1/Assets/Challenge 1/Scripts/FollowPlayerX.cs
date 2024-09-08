@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (follow player)
+		 * (Challenge1)
+		 * (camera follow)
+		 */
 public class FollowPlayerX : MonoBehaviour
 {
     public GameObject plane;

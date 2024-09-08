@@ -4,6 +4,12 @@ using System.Globalization;
 using System.Security.Cryptography;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (OUtOfBounds)
+		 * (Challenge1)
+		 * (lose condition)
+		 */
 
 //attach to player
 

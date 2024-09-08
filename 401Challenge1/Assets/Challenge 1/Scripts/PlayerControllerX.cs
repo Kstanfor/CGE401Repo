@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (PlayerController)
+		 * (Challenge1)
+		 * (move plane)
+		 */
 public class PlayerControllerX : MonoBehaviour
 {
     public float speed;

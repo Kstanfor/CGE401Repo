@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (TriggerZoneOnEnter)
+		 * (Challenge1)
+		 * (score up by one)
+		 */
+
 public class TriggerZoneAddScoreOnce : MonoBehaviour
 {
     private bool triggered = false;

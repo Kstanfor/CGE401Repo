@@ -4,6 +4,12 @@ using System.Collections.Specialized;
 using System.Threading;
 using UnityEngine;
 
+/*
+		 * (Kaiser Stanford)
+		 * (SpinPropeller)
+		 * (Challenge1)
+		 * (Propeller Spinning)
+		 */
 public class SpinPropellerX : MonoBehaviour
 {
     public float rotationSpeed;
