@@ -8,6 +8,8 @@ public class DisplayScore : MonoBehaviour
 {
     public Text textbox;
     public int score = 0;
+
+    //public bool gameOver = false;
     // Start is called before the first frame update
     void Start()
     {
