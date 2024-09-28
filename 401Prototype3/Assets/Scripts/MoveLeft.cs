@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class MoveLeft : MonoBehaviour
 {
+    public float speed = 30f;
+    private float leftBound = -15;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,10 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle")) 
+        {
+            Destroy(gameObject);
+        }
     }
 }
