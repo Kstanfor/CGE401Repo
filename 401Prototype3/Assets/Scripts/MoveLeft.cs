@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Jobs;
 
+/*
+* (Kaiser Stanford)
+* (prototype 3)
+* (moves background and obstacles to the left)
+*/
+
 public class MoveLeft : MonoBehaviour
 {
     public float speed = 30f;

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* (Kaiser Stanford)
+* (prototype 3)
+* (adds score to jumps)
+*/
+
 public class TriggerZoneAddScore : MonoBehaviour
 {
     private UIManager uIManager;

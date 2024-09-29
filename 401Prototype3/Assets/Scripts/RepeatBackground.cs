@@ -4,6 +4,12 @@ using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
 
+/*
+* (Kaiser Stanford)
+* (prototype 3)
+* (repeating background)
+*/
+
 public class RepeatBackground : MonoBehaviour
 {
     private Vector3 startPosition;

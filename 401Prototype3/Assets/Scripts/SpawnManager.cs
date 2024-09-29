@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* (Kaiser Stanford)
+* (prototype 3)
+* (spawns fences)
+*/
+
 public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;

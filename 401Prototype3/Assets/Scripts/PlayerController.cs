@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+* (Kaiser Stanford)
+* (prototype 3)
+* (allows player to jump)
+*/
+
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;

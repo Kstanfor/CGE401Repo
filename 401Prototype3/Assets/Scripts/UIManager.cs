@@ -5,6 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+* (Kaiser Stanford)
+* (prototype 3)
+* (incraments displayed score)
+*/
+
 public class UIManager : MonoBehaviour
 {
     public static int score = 0;
