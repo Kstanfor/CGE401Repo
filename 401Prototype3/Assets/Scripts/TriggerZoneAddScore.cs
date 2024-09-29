@@ -23,7 +23,7 @@ public class TriggerZoneAddScore : MonoBehaviour
         if (other.CompareTag("Player") && !triggered) 
         {
             triggered = true;
-            UIManager.score++;
+            uIManager.score++;
         }
     }
 

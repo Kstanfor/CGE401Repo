@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static int score = 0;
+    public int score = 0;
     public Text scoreText;
 
     public PlayerController playerControllerScript;
