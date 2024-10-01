@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerControllerX : MonoBehaviour
 {
-    public bool isLowEnough = false;
+    public bool isLowEnough;
     public bool gameOver;
 
     public float floatForce;
@@ -18,6 +20,13 @@ public class PlayerControllerX : MonoBehaviour
     public AudioClip moneySound;
     public AudioClip explodeSound;
 
+    public int score = 0;
+    public int scoreToWin = 12;
+    public Text textbox;
+
+    public GameObject gameOverText;
+    public GameObject winText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +38,48 @@ public class PlayerControllerX : MonoBehaviour
         // Apply a small upward force at the start of the game
         playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
 
+        isLowEnough = true;
+
+        textbox.text = "Score: " + score;
     }
 
     // Update is called once per frame
     void Update()
     {
+        textbox.text = "Score: " + score;
+
+        if (transform.position.y < 13)
+        {
+            isLowEnough = true;
+        }
+        else
+        {
+            isLowEnough = false;
+        }
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && isLowEnough)
         {
             playerRb.AddForce(Vector3.up * floatForce);
-            isLowEnough = true;
+            
+        }
+
+        if (gameOver && score < scoreToWin)
+        {
+            gameOverText.SetActive(true);
+            if (Input.GetKey(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+
+        if (score >= scoreToWin) 
+        {
+            gameOver = true;
+            winText.SetActive(true);
+            if (Input.GetKey(KeyCode.R)) 
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 
@@ -60,7 +101,12 @@ public class PlayerControllerX : MonoBehaviour
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
+            score++;
+        }
 
+        else if(other.gameObject.CompareTag("Ground") && !gameOver)
+        {
+            playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
         }
 
     }

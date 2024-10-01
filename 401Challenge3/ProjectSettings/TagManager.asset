@@ -8,6 +8,9 @@ TagManager:
   - Bomb
   - Background
   - ScoreText
+  - gameOverText
+  - winText
+  - Ground
   layers:
   - Default
   - TransparentFX
