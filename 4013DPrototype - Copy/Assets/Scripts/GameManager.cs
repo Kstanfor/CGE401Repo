@@ -6,9 +6,10 @@ namespace Assets.Scripts
 {
     public class GameManager : MonoBehaviour
     {
-       public static GameManager instance;
+      
         public int score = 0;
         private string CurrentLevelName = string.Empty;
+        public static GameManager instance;
         private void Awake()
         {
             if (instance == null)
@@ -35,7 +36,7 @@ namespace Assets.Scripts
             CurrentLevelName = levelName;
         }
 
-        public void unloadlevel(string levelName)
+        public void Unloadlevel(string levelName)
         {
             AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
 
