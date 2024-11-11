@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d1ec710bd2c2f5c4eaeef2b6a0bd9413
+  - enabled: 1
     path: Assets/Scenes/StanfordMap.unity
     guid: d9ff803398287ba448ebeef2df527882
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 01c29c0c196a70f47a4d04a231cdb58f
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: e49ef1f7c290a8848b39a6107a2183e7
   m_configObjects: {}
