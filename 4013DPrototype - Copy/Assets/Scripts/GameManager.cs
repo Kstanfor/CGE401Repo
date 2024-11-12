@@ -33,7 +33,7 @@ using UnityEngine.SceneManagement;
         {
             AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
-            if (ao != null) {
+            if (ao == null) {
                 Debug.LogError("[GameManager] Unable to Load Level " + levelName);
                 return;
             }
@@ -55,7 +55,7 @@ using UnityEngine.SceneManagement;
         {
             AsyncOperation ao = SceneManager.UnloadSceneAsync(currentLevelName);
 
-            if (ao != null)
+            if (ao == null)
             {
                 Debug.LogError("[GameManager] Unable to unLoad Level " + currentLevelName);
                 return;
