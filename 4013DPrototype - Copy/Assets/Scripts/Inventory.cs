@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts
-{
+
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private InventoryItem item;
@@ -21,4 +20,3 @@ namespace Assets.Scripts
 
         }
     }
-}

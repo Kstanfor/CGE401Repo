@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts
-{
+
     public class Weapon : MonoBehaviour
     {
         public int damageBonus;
@@ -36,4 +35,3 @@ namespace Assets.Scripts
 
         }
     }
-}

@@ -1,4 +1,4 @@
-using Assets.Scripts;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +13,7 @@ public class Golem : Enemy
         base.Awake();
         health = 120;
         //damage = 5;
-        GameManager.instance.score += 2;
+        GameManager.Instance.score += 2;
     }
 
     protected override void Attack()

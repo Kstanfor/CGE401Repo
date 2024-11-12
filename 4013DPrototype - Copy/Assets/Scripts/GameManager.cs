@@ -2,14 +2,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts
-{
-    public class GameManager : MonoBehaviour
+
+
+    public class GameManager : Singleton<GameManager>
     {
       
         public int score = 0;
-        private string CurrentLevelName = string.Empty;
-        public static GameManager instance;
+
+        public GameObject pauseMenu;
+
+        private string currentLevelName = string.Empty;
+
+        /*public static GameManager instance;
         private void Awake()
         {
             if (instance == null)
@@ -23,7 +27,7 @@ namespace Assets.Scripts
                 Destroy(gameObject);
                 Debug.LogError("Trying to instantiate a second" + "isntance of singleton Game Manager");
             }
-        }
+        }*/
 
         public void LoadLevel(string levelName)
         {
@@ -33,10 +37,10 @@ namespace Assets.Scripts
                 Debug.LogError("[GameManager] Unable to Load Level " + levelName);
                 return;
             }
-            CurrentLevelName = levelName;
+            currentLevelName = levelName;
         }
 
-        public void Unloadlevel(string levelName)
+       /* public void Unloadlevel(string levelName)
         {
             AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
 
@@ -45,6 +49,36 @@ namespace Assets.Scripts
                 Debug.LogError("[GameManager] Unable to unLoad Level " + levelName);
                 return;
             }
+        }*/
+
+        public void UnloadCurrentLevel()
+        {
+            AsyncOperation ao = SceneManager.UnloadSceneAsync(currentLevelName);
+
+            if (ao != null)
+            {
+                Debug.LogError("[GameManager] Unable to unLoad Level " + currentLevelName);
+                return;
+            }
+           
+        }
+
+        public void Pause()
+        {
+            Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+        }
+        public void Unpause()
+        {
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.P)) 
+            {
+                Pause();
+            }
         }
     }
-}
