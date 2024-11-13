@@ -3,32 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Golem : Enemy
+public class Golem : Target
 {
-
+    
     protected int damage;
     // Start is called before the first frame update
-    protected override void Awake()
+    protected override void Die()
     {
-        base.Awake();
-        health = 120;
+        Debug.Log("Golem has been defeated!");
+        Destroy(gameObject);
+        //base.Awake();
+        //health = 120;
         //damage = 5;
-        GameManager.Instance.score += 2;
+        //GameManager.Instance.score += 2;
+
     }
 
-    protected override void Attack()
-    {
-        Debug.Log("Golem Attacks!");
-    }
+   
 
-    // Update is called once per frame
-    void Update()
+    public override void TakeDamage(float amount)
     {
-        
-    }
-
-    public override void TakeDamage(int amount)
-    {
-        Debug.Log("You Took " + amount + " points of damage");
+        float reducedAmount = amount * 2f;
+        base.TakeDamage(reducedAmount);
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
-
+    public Target target;
     protected float speed;
-    protected int health;
+    //protected double health;
 
     [SerializeField] protected Weapon weapon;
 
@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     {
         weapon = gameObject.AddComponent<Weapon>();
         speed = 5f;
-        health = 100;
+        target = gameObject.GetComponent<Target>();
     }
 
     protected abstract void Attack();
