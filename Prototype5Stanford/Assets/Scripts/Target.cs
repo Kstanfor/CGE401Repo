@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour
 {
+    private GameManager gameManager;
+
     private Rigidbody targetRb;
 
     private float minSpeed = 12;
@@ -16,6 +18,8 @@ public class Target : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         targetRb = GetComponent<Rigidbody>();
 
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
@@ -40,6 +44,8 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
+        gameManager.UpdateScore(5);
+
         Destroy(gameObject);
     }
 
