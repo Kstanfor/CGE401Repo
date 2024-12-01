@@ -7,6 +7,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGameActive;
+
+    public TextMeshProUGUI gameOverText;
+
     private int score;
     public TextMeshProUGUI scoreText;
 
@@ -16,15 +20,23 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
+
         StartCoroutine(SpawnTarget());
 
         score = 0;
         UpdateScore(0);
     }
 
+    public void GameOver()
+    {
+        isGameActive = false;
+        gameOverText.gameObject.SetActive(true);
+    }
+
     IEnumerator SpawnTarget()
     {
-        while (true)
+        while (isGameActive)
         {
             // UpdateScore(5);
 

@@ -5,6 +5,8 @@ using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour
 {
+    public ParticleSystem explosionParticle;
+
     public int pointValue;
 
     private GameManager gameManager;
@@ -46,13 +48,23 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameManager.UpdateScore(pointValue);
+        if (gameManager.isGameActive)
+        {
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
 
-        Destroy(gameObject);
+            gameManager.UpdateScore(pointValue);
+
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!gameObject.CompareTag("Bad"))
+        {
+            gameManager.GameOver();
+        }
+
         Destroy(gameObject);
     }
 
