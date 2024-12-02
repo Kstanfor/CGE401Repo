@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public Button restartButton;
 
+    public GameObject titleScreen;
+
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -32,9 +34,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
+        spawnRate /= difficulty;
+
         isGameActive = true;
+
+        titleScreen.gameObject.SetActive(false);
 
         StartCoroutine(SpawnTarget());
 
